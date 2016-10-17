@@ -31,8 +31,11 @@ def prepareFiles(rootpath):
 	return(filenames,GT_ids,GT_labels)
 
 def getKeypointsDescriptors(filenames,detector_type,descriptor_type):
-	detector=cv2.FeatureDetector_create(detector_type)
-	descriptor = cv2.DescriptorExtractor_create(descriptor_type)
+	#detector=cv2.FeatureDetector_create(detector_type)
+	#descriptor = cv2.DescriptorExtractor_create(descriptor_type)
+	detector = cv2.xfeatures2d.SIFT_create()
+	descriptor = cv2.xfeatures2d.SIFT_create()
+
 	K=[]
 	D=[]
 	print 'Extracting Local Descriptors'
